@@ -7,7 +7,7 @@ namespace Sorting
         public static void Main(string[] args)
         {
             int[] array = new[] { 6, 7, 34, 12, 16, 69, 10 };
-            SelectionSort(array);
+            InsertionSort(array);
 
             foreach (var element in array)
             {
@@ -67,9 +67,21 @@ namespace Sorting
             }
         }
 
+        // Insertion sorting algorithm. Complexity is O(n). In worst cases O(n2) - when it sorted in reverse direction.
+        // Ineffecient for large amount of data.
         private static void InsertionSort(int[] array)
         {
-
+            for (int i = 1; i < array.Length; i++)
+            {
+                int key = array[i];
+                int j = i - 1;
+                while (j >= 0 && array[j] > key)
+                {
+                    array[j+1] = array[j];
+                    j--;
+                }
+                array[j + 1] = key;
+            }
         }
     }
 }
