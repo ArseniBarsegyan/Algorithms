@@ -1,4 +1,5 @@
 ﻿using System;
+using DataStructures.BinarySearchTree;
 
 namespace DataStructures
 {
@@ -6,19 +7,16 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            Tree<int> tree = new Tree<int>(7,
-                new Tree<int>(19,
-                new Tree<int>(1),
-                new Tree<int>(12),
-                new Tree<int>(31)),
-                new Tree<int>(21),
-                new Tree<int>(14,
-                new Tree<int>(23),
-                new Tree<int>(6)));
-
-            tree.TraverseDFS();
-            Console.WriteLine("BFS algorithm");
-            tree.TraverseBFS();
+            BinarySearchTree<string> tree = new BinarySearchTree<string>();
+            tree.Insert("Telerik");
+            tree.Insert("Google");
+            tree.Insert("Microsoft");
+            tree.PrintTreeDFS(); // Google Microsoft Telerik
+            Console.WriteLine(tree.Contains("Telerik")); // True
+            Console.WriteLine(tree.Contains("IBM")); // False
+            tree.Remove("Telerik");
+            Console.WriteLine(tree.Contains("Telerik")); // False
+            tree.PrintTreeDFS(); // Google Microsoft
         }
     }
 }
