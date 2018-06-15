@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DataStructures
 {
@@ -8,7 +6,7 @@ namespace DataStructures
     /// <typeparam name="T">Type of values in the tree</typeparam>
     public class BinaryTree<T>
     {
-        /// <summary>The value stored in the curent node</summary>
+        /// <summary>The value stored in the curent node</summary>
         public T Value { get; set; }
 
         /// <summary>The left child of the current node</summary>
