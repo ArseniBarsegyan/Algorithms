@@ -152,7 +152,8 @@ namespace Sorting
             }
         }
 
-        // QuickSort sorting algorithm with randow pivot. Complexity in average is O(n log n)
+        // QuickSort sorting algorithm with randow pivot. Quite efficient for large-sized data
+        // sets and its average and worst case complexity are of O(n2), where n - number of items.
         public static void QuickSort(int[] array, int left, int right)
         {
             int l = left;
