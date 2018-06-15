@@ -112,6 +112,6 @@ namespace Training.CustomLinkedList
             {
                 return Search(value, currentNode.Next);
             }
-        }
+        }        
     }
 }
