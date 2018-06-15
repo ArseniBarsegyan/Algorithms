@@ -7,7 +7,7 @@ namespace Sorting
         public static void Main(string[] args)
         {
             int[] array = new[] { 6, 7, 34, 12, 16, 69, 10 };
-            MergeSort(array);
+            QuickSort(array, 0, array.Length);
 
             foreach (var element in array)
             {
@@ -149,6 +149,41 @@ namespace Sorting
                 array[k] = Right[j];
                 j++;
                 k++;
+            }
+        }
+
+        // QuickSort sorting algorithm with randow pivot. Complexity in average is O(n log n)
+        public static void QuickSort(int[] array, int left, int right)
+        {
+            int l = left;
+            int r = right - 1;
+            int size = right - left;
+
+            if (size > 1)
+            {
+                Random random = new Random();
+                int pivot = array[random.Next(0, size) + l];
+
+                while(l < r)
+                {
+                    while(array[r] > pivot && r > l)
+                    {
+                        r--;
+                    }
+                    while(array[l] < pivot && l <= r)
+                    {
+                        l++;
+                    }
+                    if (l < r)
+                    {
+                        int temp = array[l];
+                        array[l] = array[r];
+                        array[r] = temp;
+                        l++;
+                    }
+                }
+                QuickSort(array, left, l);
+                QuickSort(array, r, right);
             }
         }
     }
