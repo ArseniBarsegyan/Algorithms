@@ -59,6 +59,10 @@ namespace Training.CustomStack
             return value;
         }
 
+        /// <summary>
+        /// Returns last element from the stack without removing it.
+        /// </summary>
+        /// <returns></returns>
         public T Peek()
         {
             if (_head == null)
