@@ -1,5 +1,6 @@
 ﻿using System;
 using Training.CustomBinaryTree;
+using Training.CustomDoubleLinkedList;
 using Training.CustomLinkedList;
 using Training.CustomQueue;
 using Training.CustomStack;
@@ -57,6 +58,16 @@ namespace Training
             //var dequeueData = queue.Dequeue();
             //var peekData = queue.Peek();
             //var dequeueData1 = queue.Dequeue();
+
+            ////Double linked list
+            //var dLinkedList = new CustomDoubleLinkedList<int>();
+            //dLinkedList.Add(1);
+            //dLinkedList.Add(2);
+            //dLinkedList.Add(3);
+            //dLinkedList.Add(4);
+            //dLinkedList.Add(5);
+
+            //dLinkedList.Swap(5, 2);
         }
     }
 }
