@@ -64,7 +64,9 @@ namespace Training
             var creationTime = DateTime.Now;
             dLinkedList.Add(1);
             dLinkedList.Add(2);
-            dLinkedList.Swap(1, 2);
+            dLinkedList.Add(3);
+            dLinkedList.Add(4);
+            dLinkedList.Swap(1, 3);
         }
     }
 }

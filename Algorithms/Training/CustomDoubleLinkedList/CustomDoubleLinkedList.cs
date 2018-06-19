@@ -125,201 +125,8 @@ namespace Training.CustomDoubleLinkedList
                     SwapCommonNodes(secondNode, firstNode);
                 }
             }
-
             return true;
-        }
-
-        // Comparing who stands first in the list - first or second node.
-        private DoubleLinkedListNode<T> GetFirstNodeByOrder(DoubleLinkedListNode<T> firstNode, DoubleLinkedListNode<T> secondNode)
-        {
-            DoubleLinkedListNode<T> firstFacedNode = _head;
-
-            while(firstFacedNode != null)
-            {
-                if (firstFacedNode.Equals(firstNode))
-                {
-                    firstFacedNode = firstNode;
-                    break;
-                }
-                else if (firstFacedNode.Equals(secondNode))
-                {
-                    firstFacedNode = secondNode;
-                    break;
-                }
-                firstFacedNode = firstFacedNode.Next;
-            }
-            return firstFacedNode;
-        }
-
-        private void SwapCommonNodes(DoubleLinkedListNode<T> firstNode, DoubleLinkedListNode<T> secondNode)
-        {
-            var preFirstNode = firstNode.Prev;
-            var postFirstNode = firstNode.Next;
-
-            var preSecondNode = secondNode.Prev;
-            var postSecondNode = secondNode.Next;
-
-            // Swap head and tail
-            if (preFirstNode == null && postFirstNode != null && preSecondNode != null && postSecondNode == null)
-            {
-                firstNode.Next = null;
-                firstNode.Prev = preSecondNode;
-
-                preSecondNode.Next = firstNode;
-                postFirstNode.Prev = secondNode;
-
-                secondNode.Prev = null;
-                secondNode.Next = postFirstNode;
-
-                _head = secondNode;
-                _tail = firstNode;
-
-                var temp = firstNode;
-                firstNode = secondNode;
-                secondNode = temp;                                
-            }
-            // Swap head with common element
-            else if (preFirstNode == null && postFirstNode != null && preSecondNode != null && postSecondNode != null)
-            {
-                firstNode.Next = postSecondNode;
-                firstNode.Prev = preSecondNode;
-
-                secondNode.Prev = null;
-                secondNode.Next = postFirstNode;
-
-                postFirstNode.Prev = secondNode;
-
-                preSecondNode.Next = firstNode;
-                postSecondNode.Prev = firstNode;
-
-                _head = secondNode;
-
-                var temp = firstNode;
-                firstNode = secondNode;
-                secondNode = temp;                
-            }
-            // Swap tail with common element
-            else if (preFirstNode != null && postFirstNode != null && preSecondNode != null && postSecondNode == null)
-            {
-                secondNode.Next = postFirstNode;
-                secondNode.Prev = preFirstNode;
-
-                firstNode.Next = null;
-                firstNode.Prev = preSecondNode;
-
-                preFirstNode.Next = secondNode;
-                postFirstNode.Prev = secondNode;
-
-                preSecondNode.Next = firstNode;
-
-                _tail = firstNode;
-
-                var temp = firstNode;
-                firstNode = secondNode;
-                secondNode = temp;                
-            }
-            // Swap between common elements
-            else
-            {
-                firstNode.Next = postSecondNode;
-                firstNode.Prev = preSecondNode;
-
-                secondNode.Next = postFirstNode;
-                secondNode.Prev = preFirstNode;
-
-                preFirstNode.Next = secondNode;
-                postFirstNode.Prev = secondNode;
-
-                preSecondNode.Next = firstNode;
-                postSecondNode.Prev = firstNode;
-
-                var temp = firstNode;
-                firstNode = secondNode;
-                secondNode = temp;
-            }
-        }
-
-        private void SwapNearbyNodes(DoubleLinkedListNode<T> firstNode, DoubleLinkedListNode<T> secondNode)
-        {
-            var prefirst = firstNode.Prev;
-            var postSecond = secondNode.Next;
-
-            // Swap only head and tail
-            if (prefirst == null && postSecond == null)
-            {
-                _head.Next = null;
-                _head.Prev = _tail;
-                _tail.Next = _head;
-                _tail.Prev = null;
-
-                var temp = _head;
-                _head = _tail;
-                _tail = temp;
-                return;
-            }
-            // Swap head and second element
-            else if (prefirst == null && postSecond != null)
-            {
-                postSecond.Prev = _head;
-                _head.Next = postSecond;
-                _head.Prev = secondNode;
-                secondNode.Prev = null;
-                secondNode.Next = _head;
-
-                var temp = secondNode;
-                secondNode = _head;
-                _head = temp;
-            }
-            // Swap between tail and pre-last element
-            else if (postSecond == null && prefirst != null)
-            {
-                prefirst.Next = secondNode;
-                secondNode.Prev = prefirst;
-                secondNode.Next = firstNode;
-                firstNode.Prev = secondNode;
-                firstNode.Next = null;
-
-                _tail = firstNode;
-                var temp = firstNode;
-                secondNode = firstNode;
-                secondNode = temp;
-            }
-            // Swap between common nodes
-            else
-            {
-                prefirst.Next = secondNode;
-                secondNode.Prev = prefirst;
-                secondNode.Next = firstNode;
-                firstNode.Prev = secondNode;
-                firstNode.Next = postSecond;
-                postSecond.Prev = firstNode;
-
-                var temp = firstNode;
-                firstNode = secondNode;
-                secondNode = temp;
-            }
-        }        
-
-        // Get first node in sequence by value.
-        private DoubleLinkedListNode<T> GetNodeByValue(T value)
-        {
-            DoubleLinkedListNode<T> nodeToBeFind = _head;
-
-            while(nodeToBeFind != null)
-            {
-                if (nodeToBeFind.Data.Equals(value))
-                {
-                    return nodeToBeFind;
-                }
-                nodeToBeFind = nodeToBeFind.Next;
-            }
-
-            if (nodeToBeFind.Equals(_head))
-            {
-                nodeToBeFind = null;
-            }
-            return nodeToBeFind;
-        }
+        }          
 
         #region private_methods
         private void AddData(T value, DoubleLinkedListNode<T> currentNode)
@@ -398,6 +205,198 @@ namespace Training.CustomDoubleLinkedList
             else
             {
                 Check(value, currentNode.Next);
+            }
+        }
+
+        // Get first node in sequence by value.
+        private DoubleLinkedListNode<T> GetNodeByValue(T value)
+        {
+            DoubleLinkedListNode<T> nodeToBeFind = _head;
+
+            while (nodeToBeFind != null)
+            {
+                if (nodeToBeFind.Data.Equals(value))
+                {
+                    return nodeToBeFind;
+                }
+                nodeToBeFind = nodeToBeFind.Next;
+            }
+
+            if (nodeToBeFind.Equals(_head))
+            {
+                nodeToBeFind = null;
+            }
+            return nodeToBeFind;
+        }
+
+        // Comparing who stands first in the list - first or second node.
+        private DoubleLinkedListNode<T> GetFirstNodeByOrder(DoubleLinkedListNode<T> firstNode, DoubleLinkedListNode<T> secondNode)
+        {
+            DoubleLinkedListNode<T> firstFacedNode = _head;
+
+            while (firstFacedNode != null)
+            {
+                if (firstFacedNode.Equals(firstNode))
+                {
+                    firstFacedNode = firstNode;
+                    break;
+                }
+                else if (firstFacedNode.Equals(secondNode))
+                {
+                    firstFacedNode = secondNode;
+                    break;
+                }
+                firstFacedNode = firstFacedNode.Next;
+            }
+            return firstFacedNode;
+        }
+
+        private void SwapCommonNodes(DoubleLinkedListNode<T> firstNode, DoubleLinkedListNode<T> secondNode)
+        {
+            var preFirstNode = firstNode.Prev;
+            var postFirstNode = firstNode.Next;
+
+            var preSecondNode = secondNode.Prev;
+            var postSecondNode = secondNode.Next;
+
+            // Swap head and tail
+            if (preFirstNode == null && postFirstNode != null && preSecondNode != null && postSecondNode == null)
+            {
+                firstNode.Next = postSecondNode;
+                firstNode.Prev = preSecondNode;
+
+                secondNode.Prev = preFirstNode;
+                secondNode.Next = postFirstNode;
+
+                preSecondNode.Next = firstNode;
+                postFirstNode.Prev = secondNode;
+
+                _head = secondNode;
+                _tail = firstNode;
+
+                var temp = firstNode;
+                firstNode = secondNode;
+                secondNode = temp;
+            }
+            // Swap head with common element
+            else if (preFirstNode == null && postFirstNode != null && preSecondNode != null && postSecondNode != null)
+            {
+                firstNode.Next = postSecondNode;
+                firstNode.Prev = preSecondNode;
+
+                secondNode.Prev = preFirstNode;
+                secondNode.Next = postFirstNode;
+
+                postFirstNode.Prev = secondNode;
+
+                preSecondNode.Next = firstNode;
+                postSecondNode.Prev = firstNode;
+
+                _head = secondNode;
+
+                var temp = firstNode;
+                firstNode = secondNode;
+                secondNode = temp;
+            }
+            // Swap tail with common element
+            else if (preFirstNode != null && postFirstNode != null && preSecondNode != null && postSecondNode == null)
+            {
+                preFirstNode.Next = secondNode;
+                postFirstNode.Prev = secondNode;
+
+                secondNode.Next = postFirstNode;
+                secondNode.Prev = preFirstNode;
+
+                preSecondNode.Next = firstNode;
+
+                firstNode.Next = postSecondNode;
+                firstNode.Prev = preSecondNode;
+
+                _tail = firstNode;
+
+                var temp = firstNode;
+                firstNode = secondNode;
+                secondNode = temp;
+            }
+            // Swap between common elements
+            else
+            {
+                preFirstNode.Next = secondNode;
+                postFirstNode.Prev = secondNode;
+
+                secondNode.Next = postFirstNode;
+                secondNode.Prev = preFirstNode;
+
+                preSecondNode.Next = firstNode;
+                postSecondNode.Prev = firstNode;
+
+                firstNode.Next = postSecondNode;
+                firstNode.Prev = preSecondNode;
+
+                var temp = firstNode;
+                firstNode = secondNode;
+                secondNode = temp;
+            }
+        }
+
+        private void SwapNearbyNodes(DoubleLinkedListNode<T> firstNode, DoubleLinkedListNode<T> secondNode)
+        {
+            var prefirst = firstNode.Prev;
+            var postSecond = secondNode.Next;
+
+            // Swap only head and tail
+            if (prefirst == null && postSecond == null)
+            {
+                _head.Next = null;
+                _head.Prev = _tail;
+                _tail.Next = _head;
+                _tail.Prev = null;
+
+                var temp = _head;
+                _head = _tail;
+                _tail = temp;
+                return;
+            }
+            // Swap head and second element
+            else if (prefirst == null && postSecond != null)
+            {
+                postSecond.Prev = _head;
+                _head.Next = postSecond;
+                _head.Prev = secondNode;
+                secondNode.Prev = null;
+                secondNode.Next = _head;
+
+                var temp = secondNode;
+                secondNode = _head;
+                _head = temp;
+            }
+            // Swap between tail and pre-last element
+            else if (postSecond == null && prefirst != null)
+            {
+                prefirst.Next = secondNode;
+                secondNode.Prev = prefirst;
+                secondNode.Next = firstNode;
+                firstNode.Prev = secondNode;
+                firstNode.Next = postSecond;
+
+                _tail = firstNode;
+                var temp = firstNode;
+                secondNode = firstNode;
+                secondNode = temp;
+            }
+            // Swap between common nodes
+            else
+            {
+                prefirst.Next = secondNode;
+                secondNode.Prev = prefirst;
+                secondNode.Next = firstNode;
+                firstNode.Prev = secondNode;
+                firstNode.Next = postSecond;
+                postSecond.Prev = firstNode;
+
+                var temp = firstNode;
+                firstNode = secondNode;
+                secondNode = temp;
             }
         }
         #endregion
