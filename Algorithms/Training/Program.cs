@@ -66,7 +66,8 @@ namespace Training
             dLinkedList.Add(2);
             dLinkedList.Add(3);
             dLinkedList.Add(4);
-            dLinkedList.Swap(1, 3);
+            dLinkedList.Add(5);
+            dLinkedList.Swap(2, 4);
         }
     }
 }
