@@ -11,7 +11,6 @@ namespace Training.CustomDoubleLinkedList
         private DoubleLinkedListNode<T> _head;
         private DoubleLinkedListNode<T> _tail;
         private bool _contains;
-        private DoubleLinkedListNode<T> _nodeToBeFind;
 
         public int Count { get; private set; }
 
@@ -125,16 +124,6 @@ namespace Training.CustomDoubleLinkedList
                     SwapCommonNodes(secondNode, firstNode);
                 }
             }
-
-            //var firstNodeByOrder = GetFirstNodeByOrder(firstNode, secondNode);
-            //if (firstNodeByOrder.Equals(firstNode))
-            //{
-            //    UniqueSwap(firstNode, secondNode);
-            //}
-            //else
-            //{
-            //    UniqueSwap(secondNode, firstNode);
-            //}
 
             return true;
         }          
@@ -272,23 +261,7 @@ namespace Training.CustomDoubleLinkedList
 
             UpdateCommonNodesLinks(firstNode, secondNode, preFirstNode, postFirstNode, preSecondNode, postSecondNode);
             SwapNodes(firstNode, secondNode);
-
-            // Swap head and tail.
-            if (preFirstNode == null && postFirstNode != null && preSecondNode != null && postSecondNode == null)
-            {
-                _head = secondNode;
-                _tail = firstNode;
-            }
-            // Swap head with common element.
-            else if (preFirstNode == null && postFirstNode != null && preSecondNode != null && postSecondNode != null)
-            {
-                _head = secondNode;
-            }
-            // Swap tail with common element.
-            else if (preFirstNode != null && postFirstNode != null && preSecondNode != null && postSecondNode == null)
-            {
-                _tail = firstNode;
-            }
+            UpdateHeadAndTail(preFirstNode, firstNode, secondNode, postSecondNode);
         }        
 
         private void SwapNearbyNodes(DoubleLinkedListNode<T> firstNode, DoubleLinkedListNode<T> secondNode)
@@ -298,23 +271,7 @@ namespace Training.CustomDoubleLinkedList
 
             UpdateNearbyNodesLinks(firstNode, secondNode, prefirst, postSecond);
             SwapNodes(firstNode, secondNode);
-
-            // Swap only head and tail.
-            if (prefirst == null && postSecond == null)
-            {
-                _head = secondNode;
-                _tail = firstNode;
-            }
-            // Swap head and second element.
-            else if (prefirst == null && postSecond != null)
-            {
-                _head = secondNode;
-            }
-            // Swap between tail and pre-last element.
-            else if (postSecond == null && prefirst != null)
-            {
-                _tail = firstNode;
-            }            
+            UpdateHeadAndTail(prefirst, firstNode, secondNode, postSecond);          
         }
 
         // Update links of common nodes and their neighboring nodes.
@@ -334,6 +291,26 @@ namespace Training.CustomDoubleLinkedList
             if (postSecondNode != null)
             {
                 postSecondNode.Prev = firstNode;
+            }
+        }
+                
+        private void UpdateHeadAndTail(DoubleLinkedListNode<T> preFirstNode, DoubleLinkedListNode<T> firstNode, DoubleLinkedListNode<T> secondNode, DoubleLinkedListNode<T> postSecondNode)
+        {
+            // Swap head and tail.
+            if (preFirstNode == null && postSecondNode == null)
+            {
+                _head = secondNode;
+                _tail = firstNode;
+            }
+            // Swap head with common element.
+            else if (preFirstNode == null)
+            {
+                _head = secondNode;
+            }
+            // Swap tail with common element.
+            else if (postSecondNode == null)
+            {
+                _tail = firstNode;
             }
         }
 
