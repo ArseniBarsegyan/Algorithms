@@ -38,19 +38,13 @@ namespace DataStructures
         public void PrintInOrder()
         {
             // 1. Visit the left child
-            if (LeftChild != null)
-            {
-                LeftChild.PrintInOrder();
-            }
+            LeftChild?.PrintInOrder();
 
             // 2. Visit the root of this sub-tree
             Console.WriteLine(Value + " ");
 
             // 3. Visit the right child
-            if (RightChild != null)
-            {
-                RightChild.PrintInOrder();
-            }
+            RightChild?.PrintInOrder();
         }
     }
 }
