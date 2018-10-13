@@ -21,7 +21,7 @@
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        public static int CycleFactorial(int number)
+        public static int LoopFactorial(int number)
         {
             if (number <= 1)
             {
