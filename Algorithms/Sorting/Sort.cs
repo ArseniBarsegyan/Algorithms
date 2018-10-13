@@ -65,7 +65,7 @@ namespace Sorting
             }
             return array;
         }
-         
+
         /// <summary>
         /// Insertion sorting algorithm. Complexity is O(n). In worst cases O(n2) - when it sorted in reverse direction.
         /// <para>
