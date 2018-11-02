@@ -1,4 +1,4 @@
-﻿namespace Training.CustomLinkedList
+﻿namespace DataStructures.CustomLinkedList
 {
     /// <summary>
     /// Node for <see cref="CustomLinkedList{T}"/>

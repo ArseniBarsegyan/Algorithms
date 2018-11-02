@@ -1,4 +1,4 @@
-﻿namespace Training.CustomDoubleLinkedList
+﻿namespace DataStructures.CustomDoubleLinkedList
 {
     public class DoubleLinkedListNode<T>
     {

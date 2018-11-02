@@ -1,4 +1,4 @@
-﻿namespace Training.CustomQueue
+﻿namespace DataStructures.CustomQueue
 {
     public class QueueNode<T>
     {

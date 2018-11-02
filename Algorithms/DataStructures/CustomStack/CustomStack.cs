@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Training.CustomStack
+namespace DataStructures.CustomStack
 {
     /// <summary>
     /// Custom stack.

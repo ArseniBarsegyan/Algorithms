@@ -1,4 +1,4 @@
-﻿namespace Training.CustomLinkedList
+﻿namespace DataStructures.CustomLinkedList
 {
     /// <summary>
     /// Provide additional functionality to LinkedList.

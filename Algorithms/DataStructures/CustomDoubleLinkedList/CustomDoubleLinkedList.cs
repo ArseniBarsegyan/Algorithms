@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Training.CustomDoubleLinkedList
+namespace DataStructures.CustomDoubleLinkedList
 {
     /// <summary>
     /// Custom double linked list.

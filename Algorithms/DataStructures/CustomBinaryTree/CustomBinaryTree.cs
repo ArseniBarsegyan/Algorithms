@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Training.CustomBinaryTree
+namespace DataStructures.CustomBinaryTree
 {
     public class CustomBinaryTree<T> where T : IComparable<T>
     {

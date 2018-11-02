@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Training.CustomLinkedList
+namespace DataStructures.CustomLinkedList
 {
     /// <summary>
     /// Custom linked list.

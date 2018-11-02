@@ -178,7 +178,7 @@ namespace DataStructures.BinarySearchTree
             Console.WriteLine();
         }
 
-        /// tree starting from given root node.</summary>
+        /// <summary>tree starting from given root node.</summary>
         /// <param name="node">the starting node</param>
         private void PrintTreeDFS(BinaryTreeNode<T> node)
         {

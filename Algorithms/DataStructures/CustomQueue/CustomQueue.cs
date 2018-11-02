@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Training.CustomQueue
+namespace DataStructures.CustomQueue
 {
     /// <summary>
     /// Custom queue.

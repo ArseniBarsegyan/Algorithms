@@ -1,4 +1,4 @@
-﻿namespace Training.CustomStack
+﻿namespace DataStructures.CustomStack
 {
     public class StackNode<T>
     {

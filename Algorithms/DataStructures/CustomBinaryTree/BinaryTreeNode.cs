@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Training.CustomBinaryTree
+namespace DataStructures.CustomBinaryTree
 {
     public class BinaryTreeNode<T> : IComparable<BinaryTreeNode<T>> where T : IComparable<T>
     {
