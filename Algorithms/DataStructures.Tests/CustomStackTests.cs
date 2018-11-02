@@ -63,5 +63,18 @@ namespace DataStructures.Tests
             stack.Peek();
             Assert.Equal(3, stack.Count);
         }
+
+        [Fact]
+        public void StackPopSeveralElementsWorkCorrectly()
+        {
+            var stack = new CustomStack<int>();
+            stack.Push(5);
+            stack.Push(3);
+            stack.Push(9);
+            stack.Pop();
+            var lastElement = stack.Pop();
+            Assert.Equal(3, lastElement);
+            Assert.Equal(1, stack.Count);
+        }
     }
 }
