@@ -2,7 +2,7 @@ using Xunit;
 
 namespace MathAlgorithms.Tests
 {
-    public class Factorial
+    public class FactorialTests
     {
         [Fact]
         public void RecursiveFactorialReturnsCorrectValueOfOne()

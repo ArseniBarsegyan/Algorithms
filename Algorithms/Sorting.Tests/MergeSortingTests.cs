@@ -2,7 +2,7 @@
 
 namespace Sorting.Tests
 {
-    public class MergeSorting
+    public class MergeSortingTests
     {
         [Fact]
         public void MergeTest1()

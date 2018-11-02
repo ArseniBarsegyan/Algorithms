@@ -2,7 +2,7 @@ using Xunit;
 
 namespace Sorting.Tests
 {
-    public class BubbleSorting
+    public class BubbleSortingTests
     {
         [Fact]
         public void BubbleTest1()

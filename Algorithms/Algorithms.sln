@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathAlgorithms.Tests", "Mat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorting", "Sorting\Sorting.csproj", "{57A0A16C-5DB8-4FF1-83A0-9D01AC0069E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures.Tests", "DataStructures.Tests\DataStructures.Tests.csproj", "{5E946E0F-42D7-4430-BB6C-341A34317097}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{57A0A16C-5DB8-4FF1-83A0-9D01AC0069E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57A0A16C-5DB8-4FF1-83A0-9D01AC0069E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57A0A16C-5DB8-4FF1-83A0-9D01AC0069E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E946E0F-42D7-4430-BB6C-341A34317097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E946E0F-42D7-4430-BB6C-341A34317097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E946E0F-42D7-4430-BB6C-341A34317097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E946E0F-42D7-4430-BB6C-341A34317097}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{48D72352-411A-4E18-A16C-A12D361DFA74} = {DB458759-07AF-4ABC-AD68-98750B1D20B6}
 		{CFC3B1DA-AB4D-4E1F-951B-2D785BA6FC3A} = {DB458759-07AF-4ABC-AD68-98750B1D20B6}
 		{57A0A16C-5DB8-4FF1-83A0-9D01AC0069E2} = {407637EB-7CAE-4E28-987F-1A486E05BAE5}
+		{5E946E0F-42D7-4430-BB6C-341A34317097} = {FB807D74-87E2-453D-9E8C-464B7D859CD8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1DCDA45D-E7A9-4E45-B8D7-394556C5DA93}
