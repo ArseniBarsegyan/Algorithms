@@ -12,7 +12,7 @@
             Node<T> fast = head;
 
             // Finding first collision spot LOOP_ZIZE-k steps in linked list.
-            while (fast != null && fast.Next != null)
+            while (fast?.Next != null)
             {
                 slow = slow.Next;
                 fast = fast.Next.Next;
@@ -25,7 +25,7 @@
             }
 
             // There is no collision spot, so there is no loop.
-            if (fast == null || fast.Next == null)
+            if (fast?.Next == null)
             {
                 return null;
             }

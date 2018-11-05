@@ -12,6 +12,16 @@ namespace DataStructures.CustomDoubleLinkedList
         private DoubleLinkedListNode<T> _tail;
         private bool _contains;
 
+        /// <summary>
+        /// Return first value in list.
+        /// </summary>
+        public T First => _head.Data;
+
+        /// <summary>
+        /// Return last value in list.
+        /// </summary>
+        public T Last => _tail.Data;
+
         public int Count { get; private set; }
 
         /// <summary>
