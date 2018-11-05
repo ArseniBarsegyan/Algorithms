@@ -6,6 +6,13 @@ namespace DataStructures.Tests
     public class CustomStackTests
     {
         [Fact]
+        public void EmptyStackShouldHaveZeroLength()
+        {
+            var queue = new CustomStack<int>();
+            Assert.Equal(0, queue.Count);
+        }
+
+        [Fact]
         public void StackPushElementCorrectly()
         {
             var stack = new CustomStack<int>();

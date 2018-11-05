@@ -12,6 +12,11 @@ namespace DataStructures.CustomLinkedList
         private Node<T> _tail;
 
         /// <summary>
+        /// Returns count of elements in the stack.
+        /// </summary>
+        public int Count { get; private set; }
+
+        /// <summary>
         /// Add value to list.
         /// </summary>
         /// <param name="value">value to be added.</param>
@@ -29,6 +34,8 @@ namespace DataStructures.CustomLinkedList
                 _tail.Next = node;
                 _tail = node;
             }
+
+            Count++;
         }
 
         /// <summary>
@@ -43,6 +50,7 @@ namespace DataStructures.CustomLinkedList
                 throw new ArgumentNullException("Couldn't find any element");
             }
             UpdateLinks(_head, nodeToRemove);
+            Count--;
         }
 
         // Update links between elements.

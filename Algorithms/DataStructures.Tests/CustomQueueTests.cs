@@ -6,6 +6,13 @@ namespace DataStructures.Tests
     public class CustomQueueTests
     {
         [Fact]
+        public void EmptyQueueShouldHaveZeroLength()
+        {
+            var queue = new CustomQueue<int>();
+            Assert.Equal(0, queue.Count);
+        }
+
+        [Fact]
         public void QueueAddElementCorrectly()
         {
             var queue = new CustomQueue<int>();
